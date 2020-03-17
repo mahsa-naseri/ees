@@ -37,6 +37,12 @@ script:
   - cd $TRAVIS_BUILD_DIR && mvn package -B -Dmatsim.preferLocalDtds=true
 # --fail-at-end # stop at first error --> easier to debug
 # -Dmaven.test.redirectTestOutputToFile # otherwise nearly impossible to debug
+deploy:
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "eesbuildoutputs"
+  skip_cleanup: true
 env:
   global:
     - MAVEN_OPTS="-Xmx4g -Xms4g"
