@@ -43,6 +43,8 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     bucket: "eesbuildoutputs"
     skip_cleanup: true
+    on:
+      branch: travis-aws-pipeline-test
   - provider: codedeploy
     access_key_id: $AWS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -50,8 +52,8 @@ deploy:
     key: target/ees-2.1.1-SNAPSHOT-release.zip
     application: ees-engine-3
     deployment_group: ees-engine-dg-1
-on:
-  branch: travis-aws-pipeline-test
+    on:
+      branch: travis-aws-pipeline-test
 env:
   global:
     - MAVEN_OPTS="-Xmx4g -Xms4g"
