@@ -38,19 +38,19 @@ script:
 # --fail-at-end # stop at first error --> easier to debug
 # -Dmaven.test.redirectTestOutputToFile # otherwise nearly impossible to debug
 deploy:
-  provider: s3
-  access_key_id: $AWS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: "eesbuildoutputs"
-  skip_cleanup: true
-  provider: codedeploy
-  access_key_id: $AWS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: "eesbuildoutputs"
-  key: target/ees-2.1.1-SNAPSHOT-release.zip
-  application: ees-engine-3
-  deployment_group: ees-engine-dg-1
-  on:
+  - provider: s3
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: "eesbuildoutputs"
+    skip_cleanup: true
+  - provider: codedeploy
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: "eesbuildoutputs"
+    key: target/ees-2.1.1-SNAPSHOT-release.zip
+    application: ees-engine-3
+    deployment_group: ees-engine-dg-1
+    on:
     branch: travis-aws-pipeline-test
 env:
   global:
