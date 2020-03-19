@@ -68,6 +68,11 @@
 			<outputDirectory>/</outputDirectory>
       <destName>README.txt</destName>
 		</file>
+		   <file>
+			<source>appspec.yml</source>
+			<outputDirectory>/</outputDirectory>
+     		        <destName>appspec.yml</destName>
+		</file>
 		<file>
 			<source>${project.build.directory}/${project.build.finalName}.jar</source>
 			<outputDirectory>/</outputDirectory>
