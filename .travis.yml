@@ -52,7 +52,7 @@ deploy:
     access_key_id: $AWS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: "eesbuildoutputs"
-    key: target/ees-2.1.1-SNAPSHOT-release.zip
+    key: ees-2.1.1-SNAPSHOT-release.zip
     application: ees-engine-test-4
     deployment_group: ees-dg-5
     region: ap-southeast-2
