@@ -44,6 +44,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     bucket: "eesbuildoutputs"
     skip_cleanup: true
+    local_dir: target
     region: ap-southeast-2
     on:
       branch: travis-aws-pipeline-test
