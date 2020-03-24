@@ -35,6 +35,7 @@ before_install:
 
 script:
   - cd $TRAVIS_BUILD_DIR && mvn package -B -Dmatsim.preferLocalDtds=true
+  - zip -rv $TRAVIS_BUILD_DIR/target/ees-2.1.1-SNAPSHOT-release.zip $TRAVIS_BUILD_DIR/appspec.yml
 # --fail-at-end # stop at first error --> easier to debug
 # -Dmaven.test.redirectTestOutputToFile # otherwise nearly impossible to debug
 deploy:
